@@ -1,0 +1,22 @@
+<template>
+  <input  v-model="$store.state.slider3" type="range" min="0" max="100" class="range range-primary" />
+</template>
+
+<script>
+export default {
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: "Slider3",
+  watch: {
+    // eslint-disable-next-line vue/no-arrow-functions-in-watch,no-unused-vars
+    '$store.state.slider3': function (newValue, oldValue) {
+      if (Number(this.$store.state.slider1)+ Number(this.$store.state.slider2)+ Number(this.$store.state.slider3) >= 101) {
+        this.$store.state.slider3 = oldValue
+      }
+    }
+  }
+}
+</script>
+
+<style scoped>
+
+</style>
